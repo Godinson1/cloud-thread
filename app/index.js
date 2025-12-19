@@ -3,7 +3,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   res.json({
-    message: "There is always a way. Ask God 🚀",
+    message: "Hey there! This is Godinson for Cloud Threadf. Way to go! 🚀",
     version: process.env.APP_VERSION || "dev",
   });
 });
