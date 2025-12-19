@@ -21,8 +21,8 @@ jobs:
 
       - name: Build and push
         run: |
-          docker build -t godwinjoseph/node-app:${IMAGE_TAG} app
-          docker push godwinjoseph/node-app:${IMAGE_TAG}
+          docker build -t godinson/cloud-thread:${IMAGE_TAG} app
+          docker push godinson/cloud-thread:${IMAGE_TAG}
 
       - name: Update Helm values
         run: |
