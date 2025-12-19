@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_ORG/nodejs-gitops
+    repoURL: https://github.com/Godinson1/cloud-thread
     targetRevision: HEAD
     path: helm-thread
     helm:
