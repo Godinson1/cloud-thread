@@ -1,0 +1,37 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set image tag
+        run: echo "IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
+      - name: Login to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login \
+            -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build and push
+        run: |
+          docker build -t godwinjoseph/node-app:${IMAGE_TAG} app
+          docker push godwinjoseph/node-app:${IMAGE_TAG}
+
+      - name: Update Helm values
+        run: |
+          sed -i "s/tag:.*/tag: \"${IMAGE_TAG}\"/" helm/node-app/values.yaml
+
+      - name: Commit Helm update
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add helm/node-app/values.yaml
+          git commit -m "Deploy ${IMAGE_TAG}"
+          git push
