@@ -3,7 +3,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Hello from Land of Honey 🚀",
+    message: "There is always a way. Ask God 🚀",
     version: process.env.APP_VERSION || "dev",
   });
 });
