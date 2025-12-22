@@ -6,7 +6,7 @@ The setup cleanly separates **infrastructure**, **application packaging**, and *
 
 ---
 
-## 🧠 Architecture Overview
+## Architecture Overview
 
 ### Tools & Responsibilities
 
@@ -20,7 +20,7 @@ The setup cleanly separates **infrastructure**, **application packaging**, and *
 
 ---
 
-## 🔁 Deployment Flow (GitOps)
+## Deployment Flow (GitOps)
 ```bash
 Developer → git push
 ↓
@@ -49,9 +49,9 @@ Kubernetes
 Rolling update of Pods
 ```
 
-⚠️ **No `kubectl apply` or `helm install` is used for application deployments.**
+**No `kubectl apply` or `helm install` is used for application deployments.**
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 cloud-thread/
