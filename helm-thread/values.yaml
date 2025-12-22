@@ -8,7 +8,7 @@ image:
   repository: godinson/cloud-thread
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "c571546"
+  tag: "a7745d8"
 
 imagePullSecrets: []
 nameOverride: ""
