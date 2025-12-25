@@ -3,7 +3,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Hey there! This is Godinson for Cloud Thread. Way to go! 🚀",
+    message: "Hey there! This is Godinson for Cloud Thread. Way to go!",
     version: process.env.APP_VERSION || "dev",
   });
 });
